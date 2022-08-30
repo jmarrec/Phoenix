@@ -29,7 +29,8 @@ jobs:
         env:
           MACOSX_DEPLOYMENT_TARGET: 10.9
           CIBW_ENVIRONMENT_MACOS: MACOSX_DEPLOYMENT_TARGET=10.9 SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
-          CIBW_BEFORE_ALL_LINUX: apt-get -y install libgtk-3-dev
+          CIBW_BEFORE_ALL_LINUX: yum install gtk3-devel
+          #apt-get -y install libgtk-3-dev
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
         # env:
         #   CIBW_SOME_OPTION: value

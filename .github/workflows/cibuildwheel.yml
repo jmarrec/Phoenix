@@ -33,10 +33,10 @@ jobs:
           CIBW_BEFORE_BUILD: pip install -r requirements.txt
           #apt-get -y install libgtk-3-dev
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
-          CIBW_SKIP: cp36-*
-        # env:
-        #   CIBW_SOME_OPTION: value
-        #    ...
+          CIBW_SKIP: "pp* *-manylinux_i686 cp36-*"
+          CIBW_ARCHS_MACOS: 'x86_64,arm64'
+          CIBW_ARCHS_WINDOWS: 'AMD64'
+          CIBW_ARCHS_LINUX: 'x86_64'   # aarch64 is having issues launching the docker correctly
         # with:
         #   package-dir: .
         #   output-dir: wheelhouse
